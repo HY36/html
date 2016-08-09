@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <!--<style>-->
-        <!--span{-->
+        <!--.span{-->
           <!--background: #fffceb;color: #d85030;-->
         <!--}-->
     <!--</style>-->
-    <script>
-        //        $.fn.highlight = function () {
-        //            this.css('backgroundColor', '#fffceb').css('color', '#d85030');
-        //            return this;
-        //        };
-
-        var span = document.getElementsByTagName('span');
-        span.style.backgroundColor = '#fffceb';
-        span.style.color = '#d85030';
-        document.write('javascript');
-        alert("hello");
-        //        $('span').highlight();
-    </script>
+    <script src="jquery-3.1.0.min.js"></script>
 
 </head>
 <body>
 <div id="test-highlight1">
     <p>什么是<span>jQuery</span></p>
     <p><span>jQuery</span>是目前最流行的<span>JavaScript</span>库。</p>
+    <input id="test" type="button" value="change" onclick="click()">
+    <script type="text/javascript">
+        function click(){
+            $('span').highlight();
+        }
+
+        $.fn.highlight = function () {
+            this.css('backgroundColor', '#fffceb').css('color', '#d85030');
+            return this;
+        };
+    </script>
+
 
 </div>
 </body>

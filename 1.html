@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Page Title</title>
-    <script>
-        function test(resolve, reject){
-            var timeOut = Math.random()*2;
-            console.log('set timeout to:' + timeOut + 'seconds');
-            setTimeout(function() {
-                if (timeOut < 1){
-                    console.log('call resolve()...');
-                    resolve('200 OK');
-                }
-                else {
-                    console.log('call reject()...');
-                    reject('timeout in ' + timeOut + 'seonds');
-                }
-            }, timeOut*1000);
-        }
+    <script src="jquery-3.1.0.min.js">
+        $.fn.highlight = $(function () {
+            this.css('backgroundColor', '#fffceb').css('color', '#d85030');
+            return this;
+        });
+
+        $('h1').highlight();
+//        h1 = document.getElementsByTagName()
     </script>
 </head>
 <body bgcolor="aqua">
 <h1 align="center">This is a Heading</h1>
-<p>This is<br /> a paragraph<br />graph with line breaks</p>
-<hr />
+<div id="test">
+<p>This is<br/> a paragraph<br/>graph with line breaks</p>
+<hr/>
+</div>
 <a href="http://baidu.com">this is a html</a>
 <img src="exam.jpg" width="1280" height="720">
 </body>
