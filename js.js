@@ -3,14 +3,14 @@
  */
 'use strict';
 
-window.loadStockData = function (r) {
+window.loadStockData = function(r) {
     var
         NUMS = 30,
         data = r.data;
     if (data.length > NUMS) {
         data = data.slice(data.length - NUMS);
     }
-    data = data.map(function (x) {
+    data = data.map(function(x) {
         return {
             date: x[0],
             open: x[1],
@@ -24,7 +24,7 @@ window.loadStockData = function (r) {
     window.drawStock(data);
 };
 
-window.drawStock = function (data) {
+window.drawStock = function(data) {
     var
         canvas = document.getElementById('stock-canvas'),
         width = canvas.width,
@@ -39,7 +39,7 @@ var js = document.createElement('script');
 js.src = 'http://img1.money.126.net/data/hs/kline/day/history/2015/0000001.json?callback=loadStockData&t=' + Date.now();
 document.getElementsByTagName('head')[0].appendChild(js);
 
-$.fn.highlight = function () {
+$.fn.highlight = function() {
     this.css('backgroundColor', '#fffceb').css('color', '#d85030');
     return this;
 };
