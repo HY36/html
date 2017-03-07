@@ -20,9 +20,9 @@ function QuickSort(A) {
 }
 
 function SelectSort(A) {
-    for (let i=0; i<A.length; i++) {
+    for (let i = 0; i < A.length; i++) {
         let min = i;
-        for (let j=i+1;j<A.length;j++) {
+        for (let j = i + 1; j < A.length; j++) {
             if (A[min] > A[j]) {
                 min = j;
             }
@@ -32,6 +32,18 @@ function SelectSort(A) {
     return A;
 }
 
-let A = [2, 6, 1, 8, 4, 7, 5, 9, 10];
-let result = QuickSort(A);
+function InsertSort(A) {
+    for (let i = 1; i < A.length; i++) {
+        let flag = A[i];
+        let j = i - 1;
+        for (; j >= 0 && A[j] > flag; j--) {
+            A[j + 1] = A[j];
+        }
+        A[j + 1] = flag;
+    }
+    return A;
+}
+
+let A = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+let result = InsertSort(A);
 console.log(result);
