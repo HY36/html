@@ -19,6 +19,19 @@ function QuickSort(A) {
     }
 }
 
+function SelectSort(A) {
+    for (let i=0; i<A.length; i++) {
+        let min = i;
+        for (let j=i+1;j<A.length;j++) {
+            if (A[min] > A[j]) {
+                min = j;
+            }
+        }
+        [A[i], A[min]] = [A[min], A[i]];
+    }
+    return A;
+}
+
 let A = [2, 6, 1, 8, 4, 7, 5, 9, 10];
 let result = QuickSort(A);
 console.log(result);
